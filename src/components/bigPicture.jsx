@@ -7,6 +7,6 @@ export const BigPicture = ({uri}) => {
   }
 
   return (
-    <Image source={pic} style={{height: 400,width: 400}} />
+    <Image source={pic} style={{height: 400, width: 400}} />
   )
 }

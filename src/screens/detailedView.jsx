@@ -42,11 +42,12 @@ export default class DetailedView extends Component {
 
   render() {
     const image = this.props.route.params.image
+    const { name, location, email } = this.state.userInfo
 
     return (
       <View style={styles}>
         <BigPicture uri={image} />
-        <Footer {...this.state.userInfo} />
+        <Footer name={name} location={location} email={email} />
       </View>
     )
   }
