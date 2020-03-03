@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { StyleSheet, View } from 'react-native'
-import { BigPicture } from '../components/bigPicture'
+import BigPicture from '../components/bigPicture'
 import { fetchDetailedInfo } from '../services/api'
-import { Footer } from '../components/footer'
+import Footer from '../components/footer'
 
 export default class DetailedView extends Component {
   state = {

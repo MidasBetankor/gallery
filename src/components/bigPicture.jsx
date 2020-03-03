@@ -1,7 +1,7 @@
 import React from 'react'
 import { Image } from 'react-native'
 
-export const BigPicture = ({uri}) => {
+export default BigPicture = ({uri}) => {
   const pic = {
     uri: uri
   }

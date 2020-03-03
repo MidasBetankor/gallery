@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, FlatList, View } from 'react-native'
 import { fetchUsers } from '../services/api'
-import { Picture } from '../components/picture';
+import Picture from '../components/picture';
 
 export default class Gallery extends Component {
   state = { users: undefined }
