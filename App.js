@@ -1,6 +1,5 @@
 import 'react-native-gesture-handler'
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
 import Gallery from './src/screens/gallery'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
@@ -28,22 +27,3 @@ const createHeaderOptions = (title, colour) => ({
   },
   headerTintColor: 'white'
 })
-/*
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'row',
-    alignContent: 'flex-start',
-    flexWrap: 'wrap',
-  },
-  statusBarPlaceholder: {
-    height: 24,
-  },
-  deepPurple: {
-    color: 'purple',
-    fontWeight: 'bold',
-    fontSize: 30
-  },
-});
-
-*/

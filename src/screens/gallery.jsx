@@ -4,7 +4,7 @@ import { fetchUsers } from '../services/api'
 import { Picture } from '../components/picture';
 
 export default class Gallery extends Component {
-  state = {users: undefined}
+  state = { users: undefined }
 
   componentDidMount() {
     fetchUsers(30)
@@ -24,7 +24,8 @@ export default class Gallery extends Component {
           style={styles.grid}
           data={this.state.users}
           numColumns={2}
-          renderItem={({item, index}) => <Picture key={index} uri={item.picture.large} onImageTap={this.onImageTap.bind(this)}/>}
+          renderItem={({item, index}) =>
+            <Picture key={index} uri={item.picture.large} onImageTap={this.onImageTap.bind(this)}/>}
           keyExtractor={(_, index) => index}
           />
       </View>
@@ -43,5 +44,4 @@ const styles = StyleSheet.compose({
     height: '100%',
     backgroundColor: 'black',
   }
-
 })

@@ -37,10 +37,8 @@ export default class DetailedView extends Component {
             email: email
           }
         }
-        
       }))
   }
-
 
   render() {
     const image = this.props.route.params.image
