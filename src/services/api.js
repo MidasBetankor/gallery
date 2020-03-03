@@ -1,21 +1,15 @@
-export async function callApi() {
-  return fetch('http://195.39.233.28:8035/auth', {
-    mehtod: 'POST',
-    body: '{"apiKey": "23567b218376f79d9415"}',
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  })
-}
+import { AJAX_REQUEST_METHODS } from '../utils/constants'
+import { USER_API } from '../config/endpoints'
+
 
 export async function fetchUsers(count) {
-  return fetch(`https://randomuser.me/api/?results=${count}`, {
-    method: 'GET'
+  return fetch(`${USER_API.USER_LIST}${count}`, {
+    method: AJAX_REQUEST_METHODS.GET
   })
 }
 
 export async function fetchDetailedInfo(page) {
-  return fetch(`https://randomuser.me/api/?results=1&inc=name,email,location&page=${page}`, {
-    method: 'GET'
+  return fetch(`${USER_API.DETAILED_INFO}${page}`, {
+    method: AJAX_REQUEST_METHODS.GET
   })
 }
