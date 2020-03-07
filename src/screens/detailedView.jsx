@@ -17,27 +17,18 @@ export default class DetailedView extends Component {
   componentDidMount() {
     fetchDetailedInfo(this.state.page)
       .then((res) => res.json())
-      .then(({results: [{
-        email,
-        location: {
-          city,
-          country
-        },
-        name: {
-          first,
-          last,
-          title
-        }
-      }]}) => this.setState((prev) => {
-        return {
-          page: prev.page + 1,
-          userInfo: {
-            name: `${title} ${first} ${last}`,
-            location: `${city}. ${country}`,
-            email: email
+      .then(({ results: [{ email, location: { city, country }, name: { first, last, title } }] }) =>
+        this.setState((prev) => {
+          return {
+            page: prev.page + 1,
+            userInfo: {
+              name: `${title} ${first} ${last}`,
+              location: `${city}. ${country}`,
+              email: email
+            }
           }
-        }
-      }))
+        })
+      )
   }
 
   render() {
@@ -58,5 +49,5 @@ const styles = StyleSheet.compose({
   justifyContent: 'space-between',
   alignItems: 'center',
   backgroundColor: 'black',
-  height: '100%',
+  height: '100%'
 })

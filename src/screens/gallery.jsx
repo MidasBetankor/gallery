@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, FlatList, View } from 'react-native'
 import { fetchUsers } from '../services/api'
-import Picture from '../components/picture';
+import Picture from '../components/picture'
 
 export default class Gallery extends Component {
   state = { users: undefined }
@@ -9,11 +9,11 @@ export default class Gallery extends Component {
   componentDidMount() {
     fetchUsers(30)
       .then((data) => data.json())
-      .then((data) => this.setState((_) => ({users: data.results})))
+      .then((data) => this.setState((_) => ({ users: data.results })))
   }
 
   onImageTap(uri) {
-    this.props.navigation.navigate('Details', {image: uri})
+    this.props.navigation.navigate('Details', { image: uri })
   }
 
   render() {
@@ -24,10 +24,11 @@ export default class Gallery extends Component {
           style={styles.grid}
           data={this.state.users}
           numColumns={2}
-          renderItem={({item, index}) =>
-            <Picture key={index} uri={item.picture.large} onImageTap={this.onImageTap.bind(this)}/>}
+          renderItem={({ item, index }) => (
+            <Picture key={index} uri={item.picture.large} onImageTap={this.onImageTap.bind(this)} />
+          )}
           keyExtractor={(_, index) => index}
-          />
+        />
       </View>
     )
   }
@@ -37,11 +38,11 @@ const styles = StyleSheet.compose({
   grid: {
     backgroundColor: 'black',
     itemStyles: {
-      alignItems: 'center',
+      alignItems: 'center'
     }
   },
   screen: {
     height: '100%',
-    backgroundColor: 'black',
+    backgroundColor: 'black'
   }
 })

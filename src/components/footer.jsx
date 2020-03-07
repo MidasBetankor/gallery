@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 
-export default Footer = ({name, location, email}) => {
+export default Footer = ({ name, location, email }) => {
   return (
     <View style={styles}>
       <Text>{name}</Text>
