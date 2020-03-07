@@ -25,5 +25,15 @@
     "babel-preset-expo": "~8.0.0",
     "@babel/core": "^7.0.0"
   },
-  "private": true
+  "private": true,
+  "prettier": {
+    "printWidth": 120,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": false,
+    "singleQuote": true,
+    "bracketSpacing": true,
+    "jsxBracketSameLine": true,
+    "arrowParens": "always"
+  }
 }
