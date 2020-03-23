@@ -4,12 +4,21 @@ import { fetchUsers } from '../services/api'
 import Picture from '../components/picture'
 
 export default class Gallery extends Component {
-  state = { users: undefined }
+  state = { users: [], page: 1 }
 
   componentDidMount() {
-    fetchUsers(30)
+    this.loadMoreData(30)
+  }
+
+  loadMoreData(count) {
+    fetchUsers(count, this.state.page)
       .then((data) => data.json())
-      .then((data) => this.setState((_) => ({ users: data.results })))
+      .then((data) =>
+        this.setState((prevState) => ({
+          users: prevState.users.concat(data.results),
+          page: prevState.page + 1
+        }))
+      )
   }
 
   onImageTap(uri) {
@@ -28,6 +37,8 @@ export default class Gallery extends Component {
             <Picture key={index} uri={item.picture.large} onImageTap={this.onImageTap.bind(this)} />
           )}
           keyExtractor={(_, index) => index}
+          onEndReachedThreshold={1}
+          onEndReached={() => this.loadMoreData(30)}
         />
       </View>
     )
